@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerActivity">
+
+    <RelativeLayout
+        android:id="@+id/register_R"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/register_R_up"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#FFFFFF">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                >
+            </ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/register_R_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/register_R_up"
+            >
+
+            <RelativeLayout
+                android:id="@+id/register_R_down_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F3F3F3">
+
+                <EditText
+                    android:id="@+id/register_R_down_E_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入账号："
+                    android:textColor="#110E0E"
+                    android:textColorHint="#000000"
+                    android:textSize="25dp">
+                </EditText>
+
+                <EditText
+                    android:id="@+id/register_R_down_E_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/register_R_down_E_account"
+                    android:layout_marginTop="20dp"
+                    android:hint="请输入密码："
+                    android:textColor="#110E0E"
+                    android:textColorHint="#000000"
+                    android:textSize="25dp">
+                </EditText>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/register_R_down_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_R_down_1">
+
+                <Button
+                    android:id="@+id/register_R_down_B_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="50dp"
+                    android:background="#97BBEB"
+                    android:text="登录"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/register_R_down_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/register_R_down_bottom_T_issue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无法登录？"
+                    android:textColor="#1D0C0C"
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/register_R_down_bottom_T_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户注册"
+                    android:textColor="#140D0D"
+                    android:textSize="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

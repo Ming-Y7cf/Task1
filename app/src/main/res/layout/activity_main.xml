@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/main_UP_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ViewFlipper
+                android:id="@+id/main_UP_filpper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:flipInterval="2000">
+
+                <ImageView
+                    android:id="@+id/imageView_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/dian2" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/dian" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/dian3" />
+
+            </ViewFlipper>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_Down_"
+            android:layout_below="@+id/main_UP_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/main_Down_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#959C9E">
+
+                <TextView
+                    android:id="@+id/main_Down_T_lable_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XX电动车修理店"
+                    android:textSize="30dp"
+                    android:textColor="#0A0A0A"
+                    />
+
+                <TextView
+                    android:id="@+id/main_Down_T_lable_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_Down_T_lable_1"
+                    android:text="店铺地址：XXXX"
+                    android:textSize="28dp"
+                    android:textColor="#0A0A0A"/>
+
+                <TextView
+                    android:id="@+id/main_Down_T_lable_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_Down_T_lable_2"
+                    android:textSize="26dp"
+                    android:text="联系方式：123456789"
+                    android:textColor="#0A0A0A"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/main_Down2"
+            android:layout_marginTop="8sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_Down_">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/main_Down_icon_appoint"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_marginLeft="10sp"
+                        android:background="@mipmap/appoint"/>
+                    <Button
+                        android:id="@+id/main_Down_icon_navigation"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="@mipmap/navigation"/>
+                    <Button
+                        android:id="@+id/main_Down_icon_query"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="@mipmap/report"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="预约"
+                        android:textSize="30sp"
+                        android:layout_marginLeft="29sp"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="指南"
+                        android:textSize="30sp"
+                        android:layout_marginLeft="80sp"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="记录"
+                        android:textSize="30sp"
+                        android:layout_marginLeft="70sp"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_Down_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/main_Down_bottom_B_tomain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主页"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:textSize="30dp"/>
+            <Button
+                android:id="@+id/main_Down_bottom_B_tomy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:text="我的"
+                android:textSize="30dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

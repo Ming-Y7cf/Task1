@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Task1</string>
+    <string-array name="provinces_array">
+        <item>云南</item>
+        <item>四川</item>
+        <item>贵州</item>
+        <item>上海</item>
+    </string-array>
+    <string-array name="city_array">
+        <item>玉溪</item>
+        <item>昆明</item>
+        <item>浦东</item>
+    </string-array>
+    <string-array name="clock_array">
+        <item>红塔区</item>
+        <item>峨山县</item>
+        <item>金海路</item>
+    </string-array>
+    <string-array name="towns_array">
+        <item>曹路</item>
+        <item>金桥</item>
+    </string-array>
+</resources>
