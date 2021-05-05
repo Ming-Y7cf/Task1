@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".FeedBackActivity"></activity>
+        <activity android:name=".GiftActivity"></activity>
+        <activity android:name=".CarsActivity" />
+        <activity android:name=".appoint_sure" />
+        <activity android:name=".FeedBackActivity" />
         <activity android:name=".Register2Activity" />
         <activity android:name=".registerActivity" />
         <activity android:name=".changeNameActivity" />

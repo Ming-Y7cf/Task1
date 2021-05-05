@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class registerActivity extends AppCompatActivity {
     private TextView register;
@@ -30,6 +31,7 @@ public class registerActivity extends AppCompatActivity {
                 Intent intent =new Intent();
                 intent.setClass(registerActivity.this,MainActivity.class);
                 startActivity(intent);
+                Toast.makeText(registerActivity.this,"欢迎使用XXXX",Toast.LENGTH_SHORT).show();
             }
         });
     }

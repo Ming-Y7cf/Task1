@@ -10,7 +10,7 @@
         android:id="@+id/register2_L"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DBD8D8"
+        android:background="#D1CECE"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -224,7 +224,7 @@
                 android:id="@+id/register2_L_top9_B_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#03A9F4"
+                android:background="#63C5F3"
                 android:textColor="#000000"
                 android:text="注册"
                 android:textSize="30dp"

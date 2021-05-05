@@ -9,11 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class FeedBackActivity extends AppCompatActivity {
     private Button submit;
-    private EditText star,item,clean,attitude,price;
-    private String allitem[]={"电瓶更换","刹车维修","车灯维修"},stars[]={"★★★★★","★★★★","★★★","★★","★"},
+    private TextView item;
+    private EditText star,clean,attitude,price;
+    private String allitem[]={"电瓶更换","刹车维修","车灯维修","分类4","分类5"},stars[]={"★★★★★","★★★★","★★★","★★","★"},
             cleanliness[]={"★★★★★","★★★★","★★★","★★","★"},attitude1[]={"★★★★★","★★★★","★★★","★★","★"},
             price1[]={"★★★★★","★★★★","★★★","★★","★"};
 
@@ -29,6 +32,7 @@ public class FeedBackActivity extends AppCompatActivity {
                 Intent intent =new Intent();
                 intent.setClass(FeedBackActivity.this,MyActivity.class);
                 startActivity(intent);
+                Toast.makeText(FeedBackActivity.this,"提交成功",Toast.LENGTH_LONG).show();
             }
         });
         item.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +124,7 @@ public class FeedBackActivity extends AppCompatActivity {
     }
     void initView(){
         submit=(Button)findViewById(R.id.Feed_Bottom_B_submit);
-        item=(EditText)findViewById(R.id.Feed_UP_L_1_E_item);
+        item=(TextView)findViewById(R.id.Feed_UP_L_1_T_item);
         star=(EditText)findViewById(R.id.Feed_UP_L_2_allstar);
         clean=(EditText)findViewById(R.id.Feed_UP_L_3_cleanliness);
         attitude=(EditText)findViewById(R.id.Feed_UP_L_4_attitude);

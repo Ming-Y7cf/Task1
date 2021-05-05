@@ -4,68 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppointActivity">
-
+    tools:context=".GiftActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="#ffffff"
         android:orientation="vertical">
         <LinearLayout
             android:background="#D1CECE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/appoint_back"
+                android:id="@+id/gift_B_back"
                 android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:background="@mipmap/back"
                 android:textColor="#000000" />
             <TextView
-                android:id="@+id/textView_select"
+                android:id="@+id/gift_TV_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="预约"
+                android:text="优惠活动"
                 android:layout_gravity="center"
-                android:layout_marginLeft="110sp"
+                android:layout_marginLeft="90sp"
                 android:textColor="#000000"
                 android:textSize="30dp" />
         </LinearLayout>
-
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:padding="10sp"
-            android:orientation="horizontal"
-            android:background="#F3F3F3">
-            <EditText
-                android:layout_width="280sp"
-                android:layout_height="wrap_content"
-                android:hint="请输入关键字"
-                android:textColorHint="#000000"
-                android:layout_marginLeft="38sp"
-                android:background="#E2DCDC"
-                android:textSize="24dp" />
-            <ImageView
-                android:layout_width="31dp"
-                android:layout_height="40sp"
-                android:layout_gravity="center"
-                android:src="@mipmap/search" />
-        </LinearLayout>
-
-
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <ExpandableListView
-                android:id="@+id/appoint_Expandlistview"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/gift_IM_1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="200sp"
+                android:background="@mipmap/dian3"/>
         </LinearLayout>
-
-
+        <LinearLayout
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/gift_IM_2"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@mipmap/dian4"/>
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

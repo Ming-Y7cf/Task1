@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class changeNameActivity extends AppCompatActivity {
     private Button back,save1,save2;
@@ -26,12 +27,14 @@ public class changeNameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                Toast.makeText(changeNameActivity.this,"修改成功",Toast.LENGTH_SHORT).show();
             }
         });
         save2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+                Toast.makeText(changeNameActivity.this,"修改成功",Toast.LENGTH_SHORT).show();
             }
         });
     }

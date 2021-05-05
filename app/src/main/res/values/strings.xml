@@ -20,4 +20,18 @@
         <item>曹路</item>
         <item>金桥</item>
     </string-array>
+    <string-array name="letf_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="right_array">
+        <item>XX</item>
+        <item>XX</item>
+        <item>XX</item>
+        <item>XX</item>
+        <item>XX</item>
+    </string-array>
 </resources>
