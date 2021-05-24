@@ -58,13 +58,14 @@
                 android:id="@+id/register2_L_top2_T_userName"
                 android:layout_width="151dp"
                 android:layout_height="wrap_content"
-                android:text="用  户  名："
+                android:text="用  户  名:"
                 android:textSize="30sp"
                 android:textColor="#000000"/>
             <EditText
                 android:id="@+id/register2_L_top2_E_userName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:singleLine="true"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/register2_L_top3"
@@ -74,7 +75,7 @@
                 android:id="@+id/register2_L_top3_T_passw"
                 android:layout_width="151dp"
                 android:layout_height="wrap_content"
-                android:text="密        码："
+                android:text="密        码:"
                 android:textColor="#000000"
                 android:textSize="30dp">
             </TextView>
@@ -82,7 +83,8 @@
                 android:id="@+id/register2_L_top3_E_passw"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:singleLine="true"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/register2_L_top4"
@@ -92,7 +94,7 @@
                 android:id="@+id/register2_L_top4_T_passwE"
                 android:layout_width="151dp"
                 android:layout_height="wrap_content"
-                android:text="确认密码："
+                android:text="确认密码:"
                 android:textColor="#000000"
                 android:textSize="30dp">
             </TextView>
@@ -100,7 +102,8 @@
                 android:id="@+id/register2_L_top4_E_passwE"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:singleLine="true"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/register2_L_top5"
@@ -214,7 +217,8 @@
             <EditText
                 android:id="@+id/register2_L_top8_E_phone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:singleLine="true"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/register2_L_top9"
@@ -228,7 +232,8 @@
                 android:textColor="#000000"
                 android:text="注册"
                 android:textSize="30dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                >
             </Button>
         </LinearLayout>
 

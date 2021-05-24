@@ -6,20 +6,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.task1.link.DBUtils;
+import com.example.task1.link.connect;
+
+import java.sql.Connection;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     ViewFlipper viewFlipper;
     private Button appoint,navigation,my,main,query,gift;
-    private TextView appointT,navigationT,queryT;
+    private TextView appointT,navigationT,queryT,giftT;
     private String address[]={"dd","dd"};
+    connect mainconn =new connect();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper = (ViewFlipper) findViewById(R.id.main_UP_filpper);
         viewFlipper.startFlipping();
         initView();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Connection connection=mainconn.getconnection();
+                System.out.println("数据库链接成功"+connection);
+            }
+        }).start();
 
         my.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,23 +69,13 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("店铺指南")
-                        .setMessage("XX电动车修理店   " +
-                                "地址：XXXXXXXXX   " +
-                                "联系方式：123456789")
-                        .show();
+                ShowDialog();
             }
         });
-        navigation.setOnClickListener(new View.OnClickListener() {
+        navigationT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("店铺指南")
-                        .setMessage("XX电动车修理店   " +
-                                "地址：XXXXXXXXX   " +
-                                "联系方式：123456789")
-                        .show();
+                ShowDialog();
             }
         });
         main.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        giftT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this,GiftActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -121,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         query=(Button)findViewById(R.id.main_Down_icon_query);
         queryT=(TextView)findViewById(R.id.main_Down_T_query);
         gift=(Button)findViewById(R.id.main_Down_icon_gift);
+        giftT=(TextView)findViewById(R.id.main_Down_T_gift);
     }
     void MyToastTime(final Toast toast, final int cnt) {
         final Timer timer = new Timer();
@@ -137,5 +149,18 @@ public class MainActivity extends AppCompatActivity {
                 timer.cancel();
             }
         }, cnt );
+    }
+    void ShowDialog(){
+        View view = LayoutInflater.from(this).inflate(R.layout.initdialog,null,false);
+        final AlertDialog dialog=new AlertDialog.Builder(this).setView(view).create();
+        Button cancel =view.findViewById(R.id.initdialog_B_cancel);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }
