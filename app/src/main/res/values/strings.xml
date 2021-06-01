@@ -34,4 +34,5 @@
         <item>XX</item>
         <item>XX</item>
     </string-array>
+    <string name="title_activity_cars_change">CarsChangeActivity</string>
 </resources>

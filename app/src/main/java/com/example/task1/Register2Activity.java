@@ -18,7 +18,11 @@ import com.example.task1.dao.UserDao;
 import com.example.task1.link.DBUtils;
 import com.example.task1.link.User;
 import com.example.task1.link.Usertest;
+import com.example.task1.link.connect;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Map;
 
 public class Register2Activity extends AppCompatActivity {
@@ -29,6 +33,10 @@ public class Register2Activity extends AppCompatActivity {
     private UserDao userDao;
     private Boolean flag=false;
 
+    connect link =new connect();
+    Connection conn=null;
+    PreparedStatement preparedStatement=null;
+    String sql=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,20 +132,21 @@ public class Register2Activity extends AppCompatActivity {
 //                            Toast.makeText(Register2Activity.this,"注册失败",Toast.LENGTH_SHORT).show();
 //                            Looper.loop();
 //                        }
-                        Usertest user = new Usertest();
+                        //Usertest user = new Usertest();
                         username = EuserName.getText().toString();
                         password = Epassw2.getText().toString();
-                        user.setUsername(username);
-                        user.setPassword(password);
+                       // user.setUsername(username);
+                       // user.setPassword(password);
                        // System.out.println(user.getUsername().toString()+"/"+user.getPassword().toString());
-                        flag = userDao.adduser(EuserName.getText().toString(),Epassw2.getText().toString());
+                         //flag = userDao.adduser(EuserName.getText().toString(),Epassw2.getText().toString());
+                        flag=add(username,password);
                         if (flag) {
                             Looper.prepare();
                             Toast.makeText(Register2Activity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                            Looper.loop();
                             Intent intent=new Intent();
                             intent.setClass(Register2Activity.this,registerActivity.class);
                             startActivity(intent);
+                            Looper.loop();
                         } else {
                             Looper.prepare();
                             Toast.makeText(Register2Activity.this, "注册失败", Toast.LENGTH_SHORT).show();
@@ -162,6 +171,24 @@ public class Register2Activity extends AppCompatActivity {
         Ephone = (EditText) findViewById(R.id.register2_L_top8_E_phone);
         man = (RadioButton) findViewById(R.id.register2_L_top5_RB_sex1);
         woman = (RadioButton) findViewById(R.id.register2_L_top5_RB_sex2);
+    }
+    boolean add(String username,String password){
+        conn=link.getconnection();
+        sql = "insert into usertest values(?,?)";
+        System.out.println("这里是插入用户\n");
+        try {
+            preparedStatement=conn.prepareStatement(sql);
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,password);
+            preparedStatement.execute();
+            preparedStatement.close();
+            return true;
+        }catch (SQLException e){
+            System.out.println("数据错误");
+            System.out.println(e.getMessage());
+            return false;
+        }
+
     }
 
 }

@@ -35,6 +35,28 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="#E6E2E2"
+            android:layout_margin="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:text="我的车辆数为："/>
+            <TextView
+                android:id="@+id/cars_TV_carsnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cars_LY_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E6E2E2"
             android:padding="10sp"
             android:layout_marginTop="10sp">
             <ImageView
@@ -44,45 +66,79 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="210sp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="雅迪电动车"
+                            android:text="车主:"
                             android:textColor="#000000"
                             android:textSize="30sp"/>
                         <TextView
+                            android:id="@+id/cars_1_userid"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2.5年"
+                            android:text="XX"
                             android:textColor="#000000"
-                            android:textSize="30sp"/>
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
                     </LinearLayout>
-                    <Button
-                        android:layout_width="50sp"
-                        android:layout_height="50sp"
-                        android:background="@mipmap/change2"
-                        android:layout_marginLeft="40sp"
-                        android:layout_gravity="center"/>
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="车牌号:"
+                            android:textColor="#000000"
+                            android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/cars_1_Mid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textColor="#000000"
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="使用:"
+                            android:textColor="#000000"
+                            android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/cars_1_years"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textColor="#000000"
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
+                    </LinearLayout>
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="车主:123456789"
-                    android:textColor="#000000"
-                    android:textSize="30sp"/>
+                <Button
+                    android:id="@+id/cars_1_change"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:background="@mipmap/change2"
+                    android:layout_gravity="center"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/cars_LY_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -96,42 +152,75 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="210sp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="爱玛电动车"
+                            android:text="车主:"
                             android:textColor="#000000"
                             android:textSize="30sp"/>
                         <TextView
+                            android:id="@+id/cars_2_userid"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1.2年"
+                            android:text="XX"
                             android:textColor="#000000"
-                            android:textSize="30sp"/>
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
                     </LinearLayout>
-                    <Button
-                        android:layout_width="50sp"
-                        android:layout_height="50sp"
-                        android:background="@mipmap/change2"
-                        android:layout_marginLeft="40sp"
-                        android:layout_gravity="center"/>
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="车牌号:"
+                            android:textColor="#000000"
+                            android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/cars_2_Mid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textColor="#000000"
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="使用:"
+                            android:textColor="#000000"
+                            android:textSize="30sp"/>
+                        <TextView
+                            android:id="@+id/cars_2_years"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textColor="#000000"
+                            android:textSize="30sp"
+                            android:layout_marginLeft="20sp"/>
+                    </LinearLayout>
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="车主:987654321"
-                    android:textColor="#000000"
-                    android:textSize="30sp"/>
+                <Button
+                    android:id="@+id/cars_2_change"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:background="@mipmap/change2"
+                    android:layout_gravity="center"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -142,12 +231,14 @@
             android:background="#E6E2E2"
             android:orientation="vertical">
             <Button
+                android:id="@+id/cars_B_addcars"
                 android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:background="@mipmap/add"
                 android:layout_gravity="center"
                 />
             <TextView
+                android:id="@+id/cars_TV_addcars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="添加车辆"

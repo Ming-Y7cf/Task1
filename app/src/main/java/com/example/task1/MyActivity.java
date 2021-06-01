@@ -19,17 +19,27 @@ public class MyActivity extends AppCompatActivity {
     private TextView nickname;
     private Button feedback,main,mycars,score,appointment,record;
     private ImageView photo;
+    private int userid;
+
+    Bundle bundle1=new Bundle();
+    Bundle next=new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         initView();
+        bundle1=this.getIntent().getExtras();
+        if(bundle1!=null)
+        userid=bundle1.getInt("userid");
+        System.out.println("当前用户："+userid);
         nickname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(MyActivity.this,changeNameActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -38,6 +48,8 @@ public class MyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,FeedBackActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -46,6 +58,8 @@ public class MyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,CarsActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -54,6 +68,8 @@ public class MyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,MainActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });

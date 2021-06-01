@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.task1.link.DBUtils;
 import com.example.task1.link.connect;
 
 import java.sql.Connection;
@@ -25,29 +24,36 @@ public class MainActivity extends AppCompatActivity {
     private Button appoint,navigation,my,main,query,gift;
     private TextView appointT,navigationT,queryT,giftT;
     private String address[]={"dd","dd"};
-    connect mainconn =new connect();
 
+    connect mainconn =new connect();
+    Bundle bundle=new Bundle();
+    Bundle next =new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper) findViewById(R.id.main_UP_filpper);
         viewFlipper.startFlipping();
+        bundle=this.getIntent().getExtras();
         initView();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Connection connection=mainconn.getconnection();
-                System.out.println("数据库链接成功"+connection);
-            }
-        }).start();
+        if (bundle!=null)
+        System.out.println("主页：当前用户为："+bundle.getInt("userid"));
+        //initDB();
 
         my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(bundle==null){
+                    Toast toast = Toast.makeText(MainActivity.this, "请先登录！！", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    MyToastTime(toast,1000);
+                }else {
                 Intent intent =new Intent();
                 intent.setClass(MainActivity.this,MyActivity.class);
+                next.putInt("userid",bundle.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
+                }
             }
         });
         appoint.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(MainActivity.this,AppointActivity.class);
+                next.putInt("userid",bundle.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -63,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(MainActivity.this,AppointActivity.class);
+
+                next.putInt("userid",bundle.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -162,5 +173,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+    void initDB(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Connection connection=mainconn.getconnection();
+                System.out.println("数据库链接成功"+connection);
+            }
+        }).start();
     }
 }

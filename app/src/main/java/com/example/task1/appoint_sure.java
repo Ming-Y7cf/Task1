@@ -15,10 +15,14 @@ public class appoint_sure extends AppCompatActivity {
     protected static String str;
     private TextView sure;
     private Button submit,back;
+    Bundle bundle1=new Bundle();
+    Bundle next=new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoint_sure);
+        bundle1=this.getIntent().getExtras();
+        System.out.println("当前用户："+bundle1.getInt("userid"));
         initView();
         //显示当前选择业务
         sure.setText(str);
@@ -27,6 +31,8 @@ public class appoint_sure extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent();
                 intent.setClass(appoint_sure.this,MainActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
                 Toast.makeText(appoint_sure.this,"预约提交成功",Toast.LENGTH_SHORT).show();
             }
@@ -36,12 +42,14 @@ public class appoint_sure extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent();
                 intent.setClass(appoint_sure.this,AppointActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
     }
     void initView(){
-        sure=(TextView)findViewById(R.id.appointsure_TV_top);
+        sure=(TextView)findViewById(R.id.appoint_sure_TV_Atype);
         submit=(Button)findViewById(R.id.appoint_sure_submit);
         back=(Button)findViewById(R.id.appoint_sure_back);
     }
