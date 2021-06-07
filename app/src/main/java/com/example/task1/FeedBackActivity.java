@@ -13,12 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FeedBackActivity extends AppCompatActivity {
-    private Button submit;
+    private Button submit,back;
     private TextView item,clean,star,attitude,price;
     private String allitem[]={"电瓶更换","刹车维修","车灯维修","分类4","分类5"},stars[]={"★★★★★","★★★★","★★★","★★","★"},
             cleanliness[]={"★★★★★","★★★★","★★★","★★","★"},attitude1[]={"★★★★★","★★★★","★★★","★★","★"},
             price1[]={"★★★★★","★★★★","★★★","★★","★"};
 
+    Bundle bundle1=new Bundle();
+    Bundle next=new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,19 @@ public class FeedBackActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent();
                 intent.setClass(FeedBackActivity.this,MyActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
+                startActivity(intent);
+                Toast.makeText(FeedBackActivity.this,"提交成功",Toast.LENGTH_LONG).show();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent();
+                intent.setClass(FeedBackActivity.this,MyActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                intent.putExtras(next);
                 startActivity(intent);
                 Toast.makeText(FeedBackActivity.this,"提交成功",Toast.LENGTH_LONG).show();
             }

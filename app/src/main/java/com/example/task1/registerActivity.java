@@ -55,13 +55,11 @@ public class registerActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        username = Euser.getText().toString();
-                        password = Epass.getText().toString();
-                        code = Ecode.getText().toString();
-                        flag = login(username, password);
-//                        flag2 = checkin(username, password, code);
-//                        System.out.println(flag+"-"+flag2);
-                        System.out.println("?");
+                        username = Euser.getText().toString().trim();
+                        password = Epass.getText().toString().trim();
+                        code = Ecode.getText().toString().trim();//trim去空格
+                        flag = login(username, password, code);
+                        //  System.out.println("?");
                         if (flag == true) {
                             int cichu = finduser(username, password);
                             if (cichu != 0) {
@@ -69,12 +67,12 @@ public class registerActivity extends AppCompatActivity {
                                 loginsure(flag);
                             } else {
                                 Looper.prepare();
-                                Toast.makeText(registerActivity.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(registerActivity.this, "输入错误", Toast.LENGTH_SHORT).show();
                                 Looper.loop();
                             }
                         } else {
                             Looper.prepare();
-                            Toast.makeText(registerActivity.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(registerActivity.this, "输入错误", Toast.LENGTH_SHORT).show();
                             Looper.loop();
                         }
                     }
@@ -109,7 +107,7 @@ public class registerActivity extends AppCompatActivity {
     int finduser(String username, String password) {
         conn = link.getconnection();
         System.out.println("用户查找数据库链接成功" + conn);
-        sql = "select * from users where username= ? and password= ?";
+        sql = "select * from users_copy where username= ? and password= ?";
         int findid = 0;
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
@@ -130,29 +128,41 @@ public class registerActivity extends AppCompatActivity {
         }
     }
 
-    boolean login(String username, String password) {
-
-        conn = link.getconnection();
-        System.out.println("登录界面数据库链接成功" + conn);
-        sql = "select * from users where username= ? and password= ?";
+    boolean login(String username, String password, String code) {
         boolean a;
-        try {
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, username);
-            pst.setString(2, password);
-            a = pst.execute();//执行sql 返回值 Boolean
-            ResultSet rs = pst.executeQuery();//用于返回当前id，便于识别
-            if (rs.next()) {
-                userid = rs.getInt("id");
-                System.out.println(userid + "此处id");
+        //检查是否输入
+        a = checkin(username, password, code);
+        if (a) {
+            //检查验证码规范
+            if (captchacheck(code)) {
+                //检查账号密码
+                conn = link.getconnection();
+                System.out.println("登录界面数据库链接成功" + conn);
+                sql = "select * from users_copy where username= ? and password= ?";
+
+                try {
+                    PreparedStatement pst = conn.prepareStatement(sql);
+                    pst.setString(1, username);
+                    pst.setString(2, password);
+                    a = pst.execute();//执行sql 返回值 Boolean
+                    ResultSet rs = pst.executeQuery();//用于返回当前id，便于识别
+                    if (rs.next()) {
+                        userid = rs.getInt("id");
+                        System.out.println(userid + "此处id");
+                    }
+                    pst.close();
+                    // System.out.println(a+"\n");
+                    return a;
+                } catch (SQLException e) {
+                    System.out.println("数据错误");
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                    return false;
+                }
+            } else {
+                return false;
             }
-            pst.close();
-            // System.out.println(a+"\n");
-            return a;
-        } catch (SQLException e) {
-            System.out.println("数据错误");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+        } else {
             return false;
         }
 
@@ -191,5 +201,14 @@ public class registerActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    boolean captchacheck(String code) {
+        if (code.equals(captcha)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
