@@ -17,7 +17,7 @@ import java.util.TimerTask;
 public class MyActivity extends AppCompatActivity {
 
     private TextView nickname;
-    private Button feedback,main,mycars,score,appointment,record;
+    private Button feedback,main,mycars,appointment,record,out;
     private ImageView photo;
     private int userid;
 
@@ -32,13 +32,15 @@ public class MyActivity extends AppCompatActivity {
         bundle1=this.getIntent().getExtras();
         if(bundle1!=null)
         userid=bundle1.getInt("userid");
-        System.out.println("当前用户："+userid);
+        System.out.println("我的：当前用户："+userid+"用户名："+bundle1.getString("username"));
+        nickname.setText(bundle1.getString("username"));
         nickname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(MyActivity.this,changeNameActivity.class);
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
             }
@@ -49,6 +51,7 @@ public class MyActivity extends AppCompatActivity {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,FeedBackActivity.class);
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
             }
@@ -59,6 +62,7 @@ public class MyActivity extends AppCompatActivity {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,CarsActivity.class);
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
             }
@@ -69,23 +73,15 @@ public class MyActivity extends AppCompatActivity {
                 Intent intent =new Intent();
                 intent.setClass(MyActivity.this,MainActivity.class);
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
-            }
-        });
-        score.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(MyActivity.this, "该功能开发中...", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                MyToastTime(toast,1000);
             }
         });
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(MyActivity.this, "尚未设计数据库，暂时无法查询", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
                 MyToastTime(toast,1000);
             }
         });
@@ -97,6 +93,17 @@ public class MyActivity extends AppCompatActivity {
                 MyToastTime(toast,1000);
             }
         });
+        out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent();
+                intent.setClass(MyActivity.this,registerActivity.class);
+                next.putInt("userid",0);
+                next.putString("username","");
+                intent.putExtras(next);
+                startActivity(intent);
+            }
+        });
 
     }
     void initView(){
@@ -105,9 +112,9 @@ public class MyActivity extends AppCompatActivity {
         photo=(ImageView)findViewById(R.id.change_R_up_img);
         main=(Button)findViewById(R.id.my_tomain);
         mycars=(Button)findViewById(R.id.my_R_down_B_cars);
-        score=(Button)findViewById(R.id.my_R_down_B_score);
         appointment=(Button)findViewById(R.id.my_R_down_B_appointment);
         record=(Button)findViewById(R.id.my_R_down_B_record);
+        out=(Button)findViewById(R.id.my_R_down_B_loginout);
     }
     void MyToastTime(final Toast toast, final int cnt) {
         final Timer timer = new Timer();

@@ -12,17 +12,24 @@ public class GiftActivity extends AppCompatActivity {
     private Button back;
     private ImageView img1,img2;
 
+    Bundle bundle = new Bundle();
+    Bundle next = new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gift);
         initView();
-
+        bundle = this.getIntent().getExtras();
+        if (bundle != null)
+            System.out.println("优惠活动：当前用户为：" + bundle.getInt("userid"));
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(GiftActivity.this,MainActivity.class);
+                Intent intent = new Intent();
+                intent.setClass(GiftActivity.this, MainActivity.class);
+                next.putInt("userid", bundle.getInt("userid"));
+                next.putString("username",bundle.getString("username"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });

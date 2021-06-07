@@ -24,7 +24,7 @@ public class AppointActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoint);
         bundle1=this.getIntent().getExtras();
-        System.out.println("当前用户："+bundle1.getInt("userid"));
+        System.out.println("预约服务：当前用户："+bundle1.getInt("userid"));
         initView();//设置默认值
         click();//列表按钮点击事件
 

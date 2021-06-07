@@ -43,7 +43,7 @@ public class CarsChangeActivity extends AppCompatActivity {
         userid=bundle1.getInt("userid");
         Mid=bundle1.getInt("Mid");
         mid.setText(""+Mid);//标记
-        System.out.println("车辆信息修改页面："+userid);
+        System.out.println("车辆信息修改：当前用户："+userid);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

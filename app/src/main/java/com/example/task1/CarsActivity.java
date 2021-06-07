@@ -34,7 +34,7 @@ public class CarsActivity extends AppCompatActivity {
         initView();
         bundle1=this.getIntent().getExtras();
         userid=bundle1.getInt("userid");
-        System.out.println("我的车辆页面："+userid);
+        System.out.println("我的车辆：当前用户"+userid);
         initCars(userid);//加载车主
         findMid(userid);
         back.setOnClickListener(new View.OnClickListener() {

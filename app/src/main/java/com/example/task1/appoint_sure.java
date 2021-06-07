@@ -42,7 +42,7 @@ public class appoint_sure extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoint_sure);
         bundle1 = this.getIntent().getExtras();
-        System.out.println("当前用户：" + bundle1.getInt("userid"));
+        System.out.println("预约单提交：当前用户：" + bundle1.getInt("userid"));
         initView();
         //显示当前选择业务
         sure.setText(str);

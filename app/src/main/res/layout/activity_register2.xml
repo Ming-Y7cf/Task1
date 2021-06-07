@@ -118,6 +118,7 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="#000000"/>
             <RadioGroup
+                android:id="@+id/register2_L_top5_RB_asex"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">

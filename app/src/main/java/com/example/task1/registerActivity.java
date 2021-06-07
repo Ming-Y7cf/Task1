@@ -176,6 +176,7 @@ public class registerActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(registerActivity.this, MainActivity.class);
             bundle.putInt("userid", userid);
+            bundle.putString("username",username);
             intent.putExtras(bundle);
             startActivity(intent);
             Looper.loop();

@@ -62,13 +62,6 @@
                 android:text="我的车辆"
                 android:textSize="30dp"/>
 
-            <Button
-                android:id="@+id/my_R_down_B_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="我的积分"
-                android:textSize="30dp"
-                android:layout_below="@id/my_R_down_B_cars"/>
 
             <Button
                 android:id="@+id/my_R_down_B_appointment"
@@ -76,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:text="我的预约"
                 android:textSize="30dp"
-                android:layout_below="@id/my_R_down_B_score"/>
+                android:layout_below="@id/my_R_down_B_cars"/>
 
             <Button
                 android:id="@+id/my_R_down_B_record"
@@ -95,10 +88,10 @@
                 android:layout_below="@id/my_R_down_B_record"/>
 
             <Button
-                android:id="@+id/my_R_down_B_setting"
+                android:id="@+id/my_R_down_B_loginout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="设置"
+                android:text="退出"
                 android:textSize="30dp"
                 android:layout_below="@id/my_R_down_B_feedback"/>
         </RelativeLayout>

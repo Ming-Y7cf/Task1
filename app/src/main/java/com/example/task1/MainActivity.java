@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (bundle == null) {
                     Toast toast = Toast.makeText(MainActivity.this, "请先登录！！", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
                     MyToastTime(toast, 1000);
                 } else {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, MyActivity.class);
                     next.putInt("userid", bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
                     intent.putExtras(next);
                     startActivity(intent);
                 }
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, AppointActivity.class);
                     next.putInt("userid", bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
                     intent.putExtras(next);
                     startActivity(intent);
                 }
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, AppointActivity.class);
                     next.putInt("userid", bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
                     intent.putExtras(next);
                     startActivity(intent);
                 }
@@ -110,16 +112,14 @@ public class MainActivity extends AppCompatActivity {
         query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MainActivity.this, "尚未设计数据库，暂时无法查询", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
+                Toast toast = Toast.makeText(MainActivity.this, "尚未设计动态View，暂时无法查询", Toast.LENGTH_SHORT);
                 MyToastTime(toast, 1000);
             }
         });
         queryT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MainActivity.this, "尚未设计数据库，暂时无法查询", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
+                Toast toast = Toast.makeText(MainActivity.this, "尚未设计动态View，暂时无法查询", Toast.LENGTH_SHORT);
                 MyToastTime(toast, 1000);
             }
         });
@@ -128,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, GiftActivity.class);
+                next.putInt("userid", bundle.getInt("userid"));
+                next.putString("username",bundle.getString("username"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });
@@ -136,6 +139,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, GiftActivity.class);
+                next.putInt("userid", bundle.getInt("userid"));
+                next.putString("username",bundle.getString("username"));
+                intent.putExtras(next);
                 startActivity(intent);
             }
         });

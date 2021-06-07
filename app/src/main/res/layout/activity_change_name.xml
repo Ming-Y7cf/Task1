@@ -38,14 +38,6 @@
                     android:layout_centerHorizontal="true"
                     android:textColor="#000000">
                 </TextView>
-                <Button
-                    android:id="@+id/change_R_up_1_B_save"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="保存"
-                    android:textSize="20sp"
-                    android:background="#2196F3"
-                    android:layout_alignParentRight="true"/>
 
             </RelativeLayout>
 
@@ -61,15 +53,15 @@
 
             </ImageView>
 
-            <EditText
-                android:id="@+id/change_R_nickname"
+            <TextView
+                android:id="@+id/change_TV_changeimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/change_R_up_img"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:text="nickname"
+                android:text="点击修改头像"
                 android:textColor="#4054B3"
                 android:textSize="30sp"/>
 
@@ -81,24 +73,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#E4AFAF">
+            android:background="#E4AFAF"
+            android:layout_margin="8dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/change_L_T_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="姓名："
+                    android:text="用户名："
                     android:textSize="30sp"
                     android:textColor="#000000"/>
                 <EditText
+                    android:id="@+id/change_ET_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="汤亚洲"
+                    android:hint="请输入新用户名"
                     android:textSize="30sp"
                     android:textColor="#000000"
+                    android:singleLine="true"
                     />
             </LinearLayout>
             <LinearLayout
@@ -106,18 +100,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/change_L_T_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="性别："
                     android:textSize="30sp"
                     android:textColor="#000000" />
                 <RadioGroup
+                    android:id="@+id/change_RG_sex"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <RadioButton
-                        android:id="@+id/register2_L_top5_RB_sex1"
+                        android:id="@+id/change_RB_man"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20sp"
@@ -125,7 +119,7 @@
                         android:textColor="#000000"
                         android:textSize="30sp"/>
                     <RadioButton
-                        android:id="@+id/register2_L_top5_RB_sex2"
+                        android:id="@+id/change_RB_woman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="女"
@@ -140,18 +134,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/change_L_T_birtherday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="生日："
+                    android:text="密码："
                     android:textSize="30sp"
                     android:textColor="#000000" />
                 <EditText
+                    android:id="@+id/change_ET_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="30sp"
-                    android:textColorHint="#000000"
                     android:textColor="#000000"
+                    android:hint="请输入新密码"
+                    android:singleLine="true"
                     />
             </LinearLayout>
             <LinearLayout
@@ -159,37 +154,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="地址："
-                    android:textSize="30sp"
-                    android:textColor="#000000" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="上海浦东金海路2360"
-                    android:textSize="30sp"
-                    android:textColor="#000000"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/textView6"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="联系方式："
                     android:textSize="30sp"
                     android:textColor="#000000" />
                 <EditText
+                    android:id="@+id/change_ET_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="123456789"
+                    android:hint="请输入新联系方式"
                     android:textSize="30sp"
                     android:textColor="#000000"
+                    android:singleLine="true"
                     />
             </LinearLayout>
 
