@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         bundle = this.getIntent().getExtras();
         initView();
         if (bundle != null)
-            System.out.println("主页：当前用户为：" + bundle.getInt("userid"));
+            System.out.println("主页：当前用户为：" + bundle.getInt("userid")+"用户名："+bundle.getString("username"));
         //initDB();
 
         my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (bundle == null) {
-                    Toast toast = Toast.makeText(MainActivity.this, "请先登录！！", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角，登录！！", Toast.LENGTH_SHORT);
                     MyToastTime(toast, 1000);
                 } else {
                     Intent intent = new Intent();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (bundle == null) {
-                    Toast toast = Toast.makeText(MainActivity.this, "请先登录！！", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角，登录！！", Toast.LENGTH_SHORT);
                     MyToastTime(toast, 1000);
                 } else {
                     Intent intent = new Intent();
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (bundle == null) {
-                    Toast toast = Toast.makeText(MainActivity.this, "请先登录！！", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角，登录！！", Toast.LENGTH_SHORT);
                     MyToastTime(toast, 1000);
                 } else {
                     Intent intent = new Intent();
@@ -112,37 +112,67 @@ public class MainActivity extends AppCompatActivity {
         query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MainActivity.this, "尚未设计动态View，暂时无法查询", Toast.LENGTH_SHORT);
-                MyToastTime(toast, 1000);
+                if (bundle == null) {
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角 登录！！", Toast.LENGTH_SHORT);
+                    MyToastTime(toast, 1000);
+                }else {
+                    Intent intent =new Intent();
+                    intent.setClass(MainActivity.this,LookAppointActivity.class);
+                    next.putInt("userid",bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
+                    next.putString("ismain","main");
+                    intent.putExtras(next);
+                    startActivity(intent);
+                }
             }
         });
         queryT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MainActivity.this, "尚未设计动态View，暂时无法查询", Toast.LENGTH_SHORT);
-                MyToastTime(toast, 1000);
+                if (bundle == null) {
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角 登录！！", Toast.LENGTH_SHORT);
+                    MyToastTime(toast, 1000);
+                }else {
+                    Intent intent =new Intent();
+                    intent.setClass(MainActivity.this,LookAppointActivity.class);
+                    next.putInt("userid",bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
+                    next.putString("ismain","main");
+                    intent.putExtras(next);
+                    startActivity(intent);
+                }
             }
         });
         gift.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, GiftActivity.class);
-                next.putInt("userid", bundle.getInt("userid"));
-                next.putString("username",bundle.getString("username"));
-                intent.putExtras(next);
-                startActivity(intent);
+                if (bundle == null) {
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角 登录！！", Toast.LENGTH_SHORT);
+                    MyToastTime(toast, 1000);
+                }else{
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, GiftActivity.class);
+                    next.putInt("userid", bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
+                    intent.putExtras(next);
+                    startActivity(intent);
+                }
             }
         });
         giftT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, GiftActivity.class);
-                next.putInt("userid", bundle.getInt("userid"));
-                next.putString("username",bundle.getString("username"));
-                intent.putExtras(next);
-                startActivity(intent);
+                if (bundle == null) {
+                    Toast toast = Toast.makeText(MainActivity.this, "请点击左下角 登录！！", Toast.LENGTH_SHORT);
+                    MyToastTime(toast, 1000);
+                }else{
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, GiftActivity.class);
+                    next.putInt("userid", bundle.getInt("userid"));
+                    next.putString("username",bundle.getString("username"));
+                    intent.putExtras(next);
+                    startActivity(intent);
+                }
             }
         });
 

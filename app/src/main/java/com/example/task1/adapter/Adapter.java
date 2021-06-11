@@ -12,10 +12,6 @@ import androidx.core.content.ContextCompat;
 
 import com.example.task1.R;
 
-/**
- * Created by fyf on 2019/3/1.
- * 描述：是二级显示列表的adapter
- */
 public class Adapter extends BaseExpandableListAdapter {
     //Model：定义的数据
     private String[] groups;

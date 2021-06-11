@@ -81,16 +81,24 @@ public class MyActivity extends AppCompatActivity {
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MyActivity.this, "尚未设计数据库，暂时无法查询", Toast.LENGTH_SHORT);
-                MyToastTime(toast,1000);
+                Intent intent =new Intent();
+                intent.setClass(MyActivity.this,LookAppointActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
+                next.putString("ismain","my");
+                intent.putExtras(next);
+                startActivity(intent);
             }
         });
         record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(MyActivity.this, "尚未设计数据库，暂时无法查询", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                MyToastTime(toast,1000);
+                Intent intent =new Intent();
+                intent.setClass(MyActivity.this,LookFeedActivity.class);
+                next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
+                intent.putExtras(next);
+                startActivity(intent);
             }
         });
         out.setOnClickListener(new View.OnClickListener() {

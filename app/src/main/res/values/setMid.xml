@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="LookCars_TV_Mid1" type="id"/>
+    <item name="LookCars_TV_Myears1" type="id"/>
+    <item name="LookCars_TV_Mname1" type="id"/>
+    <item name="LookCars_TV_Master1" type="id"/>
+    <item name="LookCars_B_change1" type="id"/>
+    <item name="LookCars_B_delete1" type="id"/>
+
+    <item name="LookCars_TV_Mid2" type="id"/>
+    <item name="LookCars_TV_Myears2" type="id"/>
+    <item name="LookCars_TV_Mname2" type="id"/>
+    <item name="LookCars_TV_Master2" type="id"/>
+    <item name="LookCars_B_change2" type="id"/>
+    <item name="LookCars_B_delete2" type="id"/>
+
+    <item name="LookCars_TV_Mid3" type="id"/>
+    <item name="LookCars_TV_Myears3" type="id"/>
+    <item name="LookCars_TV_Mname3" type="id"/>
+    <item name="LookCars_TV_Master3" type="id"/>
+    <item name="LookCars_B_change3" type="id"/>
+    <item name="LookCars_B_delete3" type="id"/>
+
+</resources>

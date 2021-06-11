@@ -129,39 +129,47 @@ public class appoint_sure extends AppCompatActivity {
 
     boolean makeappoint(String name, String address, String phone, String type, String way, String time) {
         boolean a;
-        a = checkin(name, address, phone,way,time);
+        a = checkin(name, address, phone, way, time);
         if (a) {
-            //电话与数据库类型一致
-            double x = Double.valueOf(phone);
-            BigDecimal z = BigDecimal.valueOf(x);
-            //记录当前时间
-            java.sql.Date date_sql = new java.sql.Date(System.currentTimeMillis());
-            System.out.println("this sql time" + date_sql);
+            a=phonenumber(phone);
+            if (a) {
+                //电话与数据库类型一致
+                double x = Double.valueOf(phone);
+                BigDecimal z = BigDecimal.valueOf(x);
+                //记录当前时间
+                java.sql.Date date_sql = new java.sql.Date(System.currentTimeMillis());
+                System.out.println("this sql time" + date_sql);
 
-            conn = link.getconnection();
-            System.out.println("预约服务页面" + conn);
-            sql = "insert into appoint(Aname,Aaddress,Aphone,Atype,Away,Anowtime,Aappointtime,Uid) values(?,?,?,?,?,?,?,?)";
+                conn = link.getconnection();
+                System.out.println("预约服务页面" + conn);
+                sql = "insert into appoint(Aname,Aaddress,Aphone,Atype,Away,Anowtime,Aappointtime,Uid) values(?,?,?,?,?,?,?,?)";
 
-            try {
-                PreparedStatement pst = conn.prepareStatement(sql);
-                pst.setString(1, name);
-                pst.setString(2, address);
-                pst.setBigDecimal(3, z);
-                pst.setString(4, type);
-                pst.setString(5, way);
-                pst.setDate(6, date_sql);
-                pst.setString(7, time);
-                pst.setInt(8, bundle1.getInt("userid"));
-                pst.execute();//执行sql 返回值 Boolean
-                //System.out.println(a);
-                pst.close();
-                //System.out.println(a);
-                return true;
+                try {
+                    PreparedStatement pst = conn.prepareStatement(sql);
+                    pst.setString(1, name);
+                    pst.setString(2, address);
+                    pst.setBigDecimal(3, z);
+                    pst.setString(4, type);
+                    pst.setString(5, way);
+                    pst.setDate(6, date_sql);
+                    pst.setString(7, time);
+                    pst.setInt(8, bundle1.getInt("userid"));
+                    pst.execute();//执行sql 返回值 Boolean
+                    //System.out.println(a);
+                    pst.close();
+                    //System.out.println(a);
+                    return true;
 
-            } catch (SQLException e) {
-                System.out.println("数据错误");
-                System.out.println(e.getMessage());
-                e.printStackTrace();
+                } catch (SQLException e) {
+                    System.out.println("数据错误");
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                    return false;
+                }
+            } else {
+                Looper.prepare();
+                Toast.makeText(appoint_sure.this, "电话格式输入错误", Toast.LENGTH_SHORT).show();
+                Looper.loop();
                 return false;
             }
         } else {
@@ -173,11 +181,12 @@ public class appoint_sure extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(appoint_sure.this, AppointActivity.class);
         next.putInt("userid", bundle1.getInt("userid"));
+        next.putString("username", bundle1.getString("username"));
         intent.putExtras(next);
         startActivity(intent);
     }
 
-    boolean checkin(String name, String address, String phone,String way,String time) {
+    boolean checkin(String name, String address, String phone, String way, String time) {
         if (name.equals("") || name.equals(null)) {
             Looper.prepare();
             Toast.makeText(appoint_sure.this, "请输入姓名", Toast.LENGTH_SHORT).show();
@@ -193,17 +202,31 @@ public class appoint_sure extends AppCompatActivity {
             Toast.makeText(appoint_sure.this, "请输入手机号", Toast.LENGTH_SHORT).show();
             Looper.loop();
             return false;
-        }else if (way.equals("") || way.equals(null)) {
+        } else if (way.equals("") || way.equals(null)) {
             Looper.prepare();
             Toast.makeText(appoint_sure.this, "请选择服务方式", Toast.LENGTH_SHORT).show();
             Looper.loop();
             return false;
-        }else if (time.equals("") || time.equals(null)) {
+        } else if (time.equals("") || time.equals(null)) {
             Looper.prepare();
             Toast.makeText(appoint_sure.this, "请选择服务时间", Toast.LENGTH_SHORT).show();
             Looper.loop();
             return false;
+        } else if (name.length() < 2 || name.length() > 5) {
+            Looper.prepare();
+            Toast.makeText(appoint_sure.this, "姓名长度为2-5位", Toast.LENGTH_SHORT).show();
+            Looper.loop();
+            return false;
+        } else if (phone.length() > 11 || phone.length() < 5) {
+            Looper.prepare();
+            Toast.makeText(appoint_sure.this, "联系方式为5-11位", Toast.LENGTH_SHORT).show();
+            Looper.loop();
+            return false;
         }
         return true;
+    }
+
+    boolean phonenumber(String phone1) {
+        return phone1.matches("[0-9]+");
     }
 }

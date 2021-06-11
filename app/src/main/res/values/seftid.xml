@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Look_layout_1" type="id"/>
+    <item name="Look_fid1" type="id"/>
+    <item name="Look_ftime1" type="id"/>
+    <item name="Lookf_fstar1" type="id"/>
+    <item name="Lookf_fclean1" type="id"/>
+    <item name="Lookf_fatti1" type="id"/>
+    <item name="Lookf_fprice1" type="id"/>
+    <item name="Lookf_fother1" type="id"/>
+    <item name="Lookf_ftype1" type="id"/>
+
+    <item name="Look_layout_2" type="id"/>
+    <item name="Lookf_fid2" type="id"/>
+    <item name="Lookf_ftime2" type="id"/>
+    <item name="Lookf_fstar2" type="id"/>
+    <item name="Lookf_fclean2" type="id"/>
+    <item name="Lookf_fatti2" type="id"/>
+    <item name="Lookf_fprice2" type="id"/>
+    <item name="Lookf_fother2" type="id"/>
+    <item name="Lookf_ftype2" type="id"/>
+
+    <item name="Look_layout_3" type="id"/>
+    <item name="Lookf_fid3" type="id"/>
+    <item name="Lookf_ftime3" type="id"/>
+    <item name="Lookf_fstar3" type="id"/>
+    <item name="Lookf_fclean3" type="id"/>
+    <item name="Lookf_fatti3" type="id"/>
+    <item name="Lookf_fprice3" type="id"/>
+    <item name="Lookf_fother3" type="id"/>
+    <item name="Lookf_ftype3" type="id"/>
+
+    <item name="Look_layout_4" type="id"/>
+    <item name="Lookf_fid4" type="id"/>
+    <item name="Lookf_ftime4" type="id"/>
+    <item name="Lookf_fstar4" type="id"/>
+    <item name="Lookf_fclean4" type="id"/>
+    <item name="Lookf_fatti4" type="id"/>
+    <item name="Lookf_fprice4" type="id"/>
+    <item name="Lookf_fother4" type="id"/>
+    <item name="Lookf_ftype4" type="id"/>
+
+    <item name="Look_layout_5" type="id"/>
+    <item name="Lookf_fid5" type="id"/>
+    <item name="Lookf_ftime5" type="id"/>
+    <item name="Lookf_fstar5" type="id"/>
+    <item name="Lookf_fclean5" type="id"/>
+    <item name="Lookf_fatti5" type="id"/>
+    <item name="Lookf_fprice5" type="id"/>
+    <item name="Lookf_fother5" type="id"/>
+    <item name="Lookf_ftype5" type="id"/>
+</resources>

@@ -64,7 +64,8 @@
                     android:textColor="#110E0E"
                     android:textColorHint="#000000"
                     android:textSize="25dp"
-                    android:singleLine="true">
+                    android:singleLine="true"
+                    android:inputType="textPassword">
                 </EditText>
 
             </RelativeLayout>

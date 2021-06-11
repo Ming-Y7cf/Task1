@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".CarsChangeActivity"></activity>
+        <activity android:name=".LookAppointActivity"></activity>
+        <activity android:name=".CarsAddActivity" />
+        <activity android:name=".LookFeedActivity" />
+        <activity android:name=".CarsChangeActivity" />
         <activity android:name=".GiftActivity" />
         <activity android:name=".CarsActivity" />
         <activity android:name=".appoint_sure" />

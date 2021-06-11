@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/feed_B_back"
+                android:id="@+id/Feed_B_back"
                 android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:background="@mipmap/back"
@@ -47,9 +47,9 @@
                />
             <TextView
                 android:id="@+id/Feed_UP_L_1_T_item"
-                android:text="单击选择想要评价的业务"
+                android:hint="选择想要评价的业务类别"
                 android:textColorHint="#000000"
-                android:textColor="#BD2222"
+                android:textColor="#000000"
                 android:textSize="23sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -164,9 +164,11 @@
                 android:textSize="25dp"
               />
             <EditText
+                android:id="@+id/Feed_UP_L_7_others"
                 android:textColor="#000000"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:singleLine="true">
             </EditText>
 
         </LinearLayout>

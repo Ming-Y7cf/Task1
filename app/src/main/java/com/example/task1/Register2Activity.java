@@ -2,12 +2,12 @@ package com.example.task1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+
 import android.os.Looper;
-import android.os.Message;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,24 +15,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.task1.dao.UserDao;
-import com.example.task1.link.DBUtils;
-import com.example.task1.link.User;
-import com.example.task1.link.Usertest;
 import com.example.task1.link.connect;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Map;
+
 
 public class Register2Activity extends AppCompatActivity {
     private EditText EuserName, Epassw1, Epassw2, Ephone;
     private Button login, back;
     private RadioButton man, woman;
     private RadioGroup radioGroup;
-    private String username, password, sex="", phone;
+    private String username, password, sex = "", phone;
     private Boolean flag = false;
 
     connect link = new connect();
@@ -118,30 +115,78 @@ public class Register2Activity extends AppCompatActivity {
     boolean add(String username, String password, String password2, String sex, String phone) {
         boolean a = checkin(username, password, password2, phone);
         if (a) {
-            double x = Double.valueOf(phone);
-            BigDecimal z = BigDecimal.valueOf(x);
-            conn = link.getconnection();
-            sql = "insert into users_copy(name,username,password,sex,phone) values(?,?,?,?,?)";
-            System.out.println("这里是插入用户\n");
-            try {
-                preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, username);
-                preparedStatement.setString(2, username);
-                preparedStatement.setString(3, password);
-                preparedStatement.setString(4, sex);
-                preparedStatement.setBigDecimal(5, z);
-                preparedStatement.execute();
-                preparedStatement.close();
-                return true;
-            } catch (SQLException e) {
-                System.out.println("数据错误");
-                System.out.println(e.getMessage());
+            a = phonenumber(phone);//电话号码是否是数字
+            if (a) {
+                a = findusername(username);//用户名是否重复
+                System.out.println(a);
+                if (a == false) {
+                    double x = Double.valueOf(phone);
+                    BigDecimal z = BigDecimal.valueOf(x);
+                    conn = link.getconnection();
+                    sql = "insert into users_copy(name,username,password,sex,phone) values(?,?,?,?,?)";
+                    System.out.println("这里是插入用户\n");
+                    try {
+                        preparedStatement = conn.prepareStatement(sql);
+                        preparedStatement.setString(1, username);
+                        preparedStatement.setString(2, username);
+                        preparedStatement.setString(3, password);
+                        preparedStatement.setString(4, sex);
+                        preparedStatement.setBigDecimal(5, z);
+                        preparedStatement.execute();
+                        preparedStatement.close();
+                        return true;
+                    } catch (SQLException e) {
+                        System.out.println("数据错误");
+                        System.out.println(e.getMessage());
+                        return false;
+                    }
+                } else {
+                    Looper.prepare();
+                    Toast.makeText(Register2Activity.this, "该用户已存在", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
+                    return false;
+                }
+            } else {
+                Looper.prepare();
+                Toast.makeText(Register2Activity.this, "电话格式输入错误", Toast.LENGTH_SHORT).show();
+                Looper.loop();
                 return false;
             }
         } else {
             return false;
         }
 
+    }
+
+    boolean findusername(String findname) {
+        conn = link.getconnection();
+        sql = "select * from users_copy where name=?";
+        System.out.println(findname);
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, findname);
+            ResultSet set = pst.executeQuery();
+            String[] a = new String[2];
+            String a1;
+            int i = 0;
+            while (set.next()) {
+                a1 = set.getString("name");
+                a[i] = a1;
+                i++;
+            }
+            System.out.println("：" + i);
+            System.out.println("a：" + a[0]);
+            pst.close();
+            if (i == 0) {
+                return false;//无同名
+            } else {
+                return true;
+            }
+        } catch (SQLException e) {
+            //System.out.println("没有同名用户");
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
     boolean checkin(String name1, String pass1, String pass2, String phone1) {
@@ -165,7 +210,7 @@ public class Register2Activity extends AppCompatActivity {
             Toast.makeText(Register2Activity.this, "请输入手机号", Toast.LENGTH_SHORT).show();
             Looper.loop();
             return false;
-        } else if (name1.length() < 2 || name1.length() > 10) {
+        } else if (name1.length() < 3 || name1.length() > 10) {
             Looper.prepare();
             Toast.makeText(Register2Activity.this, "用户名长度为3-10位", Toast.LENGTH_SHORT).show();
             Looper.loop();
@@ -180,7 +225,7 @@ public class Register2Activity extends AppCompatActivity {
             Toast.makeText(Register2Activity.this, "密码长度为6-16位", Toast.LENGTH_SHORT).show();
             Looper.loop();
             return false;
-        }else if (phone1.length() > 11 || phone1.length() < 5) {
+        } else if (phone1.length() > 11 || phone1.length() < 5) {
             Looper.prepare();
             Toast.makeText(Register2Activity.this, "联系方式为5-11位", Toast.LENGTH_SHORT).show();
             Looper.loop();
@@ -189,4 +234,7 @@ public class Register2Activity extends AppCompatActivity {
         return true;
     }
 
+    boolean phonenumber(String phone1) {
+        return phone1.matches("[0-9]+");
+    }
 }

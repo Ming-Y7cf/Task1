@@ -24,7 +24,7 @@ public class AppointActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoint);
         bundle1=this.getIntent().getExtras();
-        System.out.println("预约服务：当前用户："+bundle1.getInt("userid"));
+        System.out.println("预约服务：当前用户："+bundle1.getInt("userid")+"用户名："+bundle1.getString("username"));
         initView();//设置默认值
         click();//列表按钮点击事件
 
@@ -34,6 +34,7 @@ public class AppointActivity extends AppCompatActivity {
                 Intent intent=new Intent();
                 intent.setClass(AppointActivity.this,MainActivity.class);
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
             }
@@ -63,6 +64,7 @@ public class AppointActivity extends AppCompatActivity {
                 //获取数据中数据 在下一个页面显示
                 appoint_sure.str=childs[groupPosition][childPosition];
                 next.putInt("userid",bundle1.getInt("userid"));
+                next.putString("username",bundle1.getString("username"));
                 intent.putExtras(next);
                 startActivity(intent);
                 //Toast.makeText(AppointActivity.this, childs[groupPosition][childPosition], Toast.LENGTH_SHORT).show();

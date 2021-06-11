@@ -75,7 +75,7 @@
                 android:id="@+id/my_R_down_B_record"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="我的记录"
+                android:text="我的反馈"
                 android:textSize="30dp"
                 android:layout_below="@id/my_R_down_B_appointment"/>
 

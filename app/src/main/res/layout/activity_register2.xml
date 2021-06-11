@@ -114,8 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="性别："
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
+                android:textSize="30dp"
                 android:textColor="#000000"/>
             <RadioGroup
                 android:id="@+id/register2_L_top5_RB_asex"
@@ -127,84 +126,84 @@
                     android:id="@+id/register2_L_top5_RB_sex1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
+                    android:layout_marginLeft="30sp"
                     android:text="男"
                     android:textColor="#000000"
-                    android:textSize="20dp"/>
+                    android:textSize="30dp"/>
             <RadioButton
                 android:id="@+id/register2_L_top5_RB_sex2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="女"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:layout_marginLeft="20sp"
                 android:textColor="#000000"/>
             </RadioGroup>
 
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/register2_L_top6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/register2_L_top6_T_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="地址："
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="#000000"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="省份"
-                android:textColor="#000000"
-                android:textSize="20dp"/>
-            <Spinner
-                android:id="@+id/register2_L_top6_Sp_address1"
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:entries="@array/provinces_array"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="城市"
-                android:textSize="20dp"
-                android:textColor="#000000"/>
-            <Spinner
-                android:id="@+id/register2_L_top6_Sp_address2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:entries="@array/city_array"/>
-        </LinearLayout>
-        <LinearLayout
-        android:id="@+id/register2_L_top7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/register2_L_top6"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:id="@+id/register2_L_top6_T_address"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="地址："-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:textColor="#000000"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="省份"-->
+<!--                android:textColor="#000000"-->
+<!--                android:textSize="20dp"/>-->
+<!--            <Spinner-->
+<!--                android:id="@+id/register2_L_top6_Sp_address1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="27dp"-->
+<!--                android:entries="@array/provinces_array"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="城市"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textColor="#000000"/>-->
+<!--            <Spinner-->
+<!--                android:id="@+id/register2_L_top6_Sp_address2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:entries="@array/city_array"/>-->
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--        android:id="@+id/register2_L_top7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="68dp"
-                android:text="县/区"
-                android:textColor="#000000"
-                android:textSize="20sp"/>
-        <Spinner
-            android:id="@+id/register2_L_top6_Sp_address3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/clock_array"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="乡镇"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:entries="@array/towns_array"/>
-    </LinearLayout>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginLeft="68dp"-->
+<!--                android:text="县/区"-->
+<!--                android:textColor="#000000"-->
+<!--                android:textSize="20sp"/>-->
+<!--        <Spinner-->
+<!--            android:id="@+id/register2_L_top6_Sp_address3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:entries="@array/clock_array"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="乡镇"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#000000"/>-->
+<!--            <Spinner-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:entries="@array/towns_array"/>-->
+<!--    </LinearLayout>-->
         <LinearLayout
             android:id="@+id/register2_L_top8"
             android:layout_width="match_parent"
@@ -219,7 +218,8 @@
                 android:id="@+id/register2_L_top8_E_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:inputType="phone"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/register2_L_top9"

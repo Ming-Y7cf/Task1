@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="LookAppoint_TV_Aid1" type="id"/>
+    <item name="LookAppoint_TV_Aname1" type="id"/>
+    <item name="LookAppoint_TV_Away1" type="id"/>
+    <item name="LookAppoint_TV_Atype1" type="id"/>
+    <item name="LookAppoint_TV_Atime1" type="id"/>
+    <item name="LookAppoint_TV_Anowtime1" type="id"/>
+    <item name="LookAppoint_TV_Aaddress1" type="id"/>
+    <item name="LookAppoint_TV_Aphone1" type="id"/>
+
+    <item name="LookAppoint_TV_Aid2" type="id"/>
+    <item name="LookAppoint_TV_Aname2" type="id"/>
+    <item name="LookAppoint_TV_Away2" type="id"/>
+    <item name="LookAppoint_TV_Atype2" type="id"/>
+    <item name="LookAppoint_TV_Atime2" type="id"/>
+    <item name="LookAppoint_TV_Anowtime2" type="id"/>
+    <item name="LookAppoint_TV_Aaddress2" type="id"/>
+    <item name="LookAppoint_TV_Aphone2" type="id"/>
+
+    <item name="LookAppoint_TV_Aid3" type="id"/>
+    <item name="LookAppoint_TV_Aname3" type="id"/>
+    <item name="LookAppoint_TV_Away3" type="id"/>
+    <item name="LookAppoint_TV_Atype3" type="id"/>
+    <item name="LookAppoint_TV_Atime3" type="id"/>
+    <item name="LookAppoint_TV_Anowtime3" type="id"/>
+    <item name="LookAppoint_TV_Aaddress3" type="id"/>
+    <item name="LookAppoint_TV_Aphone3" type="id"/>
+
+    <item name="LookAppoint_TV_Aid4" type="id"/>
+    <item name="LookAppoint_TV_Aname4" type="id"/>
+    <item name="LookAppoint_TV_Away4" type="id"/>
+    <item name="LookAppoint_TV_Atype4" type="id"/>
+    <item name="LookAppoint_TV_Atime4" type="id"/>
+    <item name="LookAppoint_TV_Anowtime4" type="id"/>
+    <item name="LookAppoint_TV_Aaddress4" type="id"/>
+    <item name="LookAppoint_TV_Aphone4" type="id"/>
+
+    <item name="LookAppoint_TV_Aid5" type="id"/>
+    <item name="LookAppoint_TV_Aname5" type="id"/>
+    <item name="LookAppoint_TV_Away5" type="id"/>
+    <item name="LookAppoint_TV_Atype5" type="id"/>
+    <item name="LookAppoint_TV_Atime5" type="id"/>
+    <item name="LookAppoint_TV_Anowtime5" type="id"/>
+    <item name="LookAppoint_TV_Aaddress5" type="id"/>
+    <item name="LookAppoint_TV_Aphone5" type="id"/>
+
+    <item name="LookAppoint_TV_Aid6" type="id"/>
+    <item name="LookAppoint_TV_Aname6" type="id"/>
+    <item name="LookAppoint_TV_Away6" type="id"/>
+    <item name="LookAppoint_TV_Atype6" type="id"/>
+    <item name="LookAppoint_TV_Atime6" type="id"/>
+    <item name="LookAppoint_TV_Anowtime6" type="id"/>
+    <item name="LookAppoint_TV_Aaddress6" type="id"/>
+    <item name="LookAppoint_TV_Aphone6" type="id"/>
+
+    <item name="LookAppoint_TV_Aid7" type="id"/>
+    <item name="LookAppoint_TV_Aname7" type="id"/>
+    <item name="LookAppoint_TV_Away7" type="id"/>
+    <item name="LookAppoint_TV_Atype7" type="id"/>
+    <item name="LookAppoint_TV_Atime7" type="id"/>
+    <item name="LookAppoint_TV_Anowtime7" type="id"/>
+    <item name="LookAppoint_TV_Aaddress7" type="id"/>
+    <item name="LookAppoint_TV_Aphone7" type="id"/>
+
+    <item name="LookAppoint_TV_Aid8" type="id"/>
+    <item name="LookAppoint_TV_Aname8" type="id"/>
+    <item name="LookAppoint_TV_Away8" type="id"/>
+    <item name="LookAppoint_TV_Atype8" type="id"/>
+    <item name="LookAppoint_TV_Atime8" type="id"/>
+    <item name="LookAppoint_TV_Anowtime8" type="id"/>
+    <item name="LookAppoint_TV_Aaddress8" type="id"/>
+    <item name="LookAppoint_TV_Aphone8" type="id"/>
+
+    <item name="LookAppoint_TV_Aid10" type="id"/>
+    <item name="LookAppoint_TV_Aname10" type="id"/>
+    <item name="LookAppoint_TV_Away10" type="id"/>
+    <item name="LookAppoint_TV_Atype10" type="id"/>
+    <item name="LookAppoint_TV_Atime10" type="id"/>
+    <item name="LookAppoint_TV_Anowtime10" type="id"/>
+    <item name="LookAppoint_TV_Aaddress10" type="id"/>
+    <item name="LookAppoint_TV_Aphone10" type="id"/>
+
+    <item name="LookAppoint_TV_Aid9" type="id"/>
+    <item name="LookAppoint_TV_Aname9" type="id"/>
+    <item name="LookAppoint_TV_Away9" type="id"/>
+    <item name="LookAppoint_TV_Atype9" type="id"/>
+    <item name="LookAppoint_TV_Atime9" type="id"/>
+    <item name="LookAppoint_TV_Anowtime9" type="id"/>
+    <item name="LookAppoint_TV_Aaddress9" type="id"/>
+    <item name="LookAppoint_TV_Aphone9" type="id"/>
+</resources>
